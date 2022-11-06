@@ -1,13 +1,96 @@
-.first-element{
-    background-image: url(pictures/header-fuji.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width:600px;
-    height:300px;
+html, body{
+    margin:0;
+    padding:0;
+    font-size: 20px;
 }
 
-body{
-    font-size: 20px;
-    height:100vh;
-    width:100vh;
+.first-element{
+    background-image: url(pictures/destination_tokyo.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 100%;
+    height: 650px;
+    background-size: 100% auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+header{
+    background: linear-gradient(180deg, rgba(244,125,125,1) 0%, rgba(191,99,99,0) 37%);
+}
+header::after{
+    content: '';
+    display:table;
+    clear:both;
+}
+
+.logo{
+    float:left;
+    background-color: #ffffff;
+    border-radius:50%;
+    margin: 10px;
+    padding: 10px;
+    height:70px;
+    width: 70px;
+}
+
+nav{
+    float:right; 
+}
+
+nav ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.navbaroption{ /* we need to make the items not ontop of each other, but next to*/
+   /* float: left;  makes the list items go in order to each other */
+    display: inline-block; /* does the same as float, better and more versatile*/
+    margin-left: 70px; /*gives space between the nav tags, leaving space for the content on the left under navbar*/
+    padding-top: 40px;
+
+    position:relative; /* the position is relative to nav a, which is proclaimed to be absolute*/
+}
+.logo-text{
+    display: inline-block; /* does the same as float, better and more versatile*/
+    margin-left:0; /*gives space between the nav tags, leaving space for the content on the left under navbar*/
+    padding-top: 20px;
+    font-size:50px;
+}
+
+nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+nav a:hover{
+    color: pink;
+}
+
+nav a::before{
+    content:'';
+    display:block;
+    height:5px;
+    width:100%;
+    background-color: pink;
+    
+    position:absolute; /* self-proclaimed absolute*/
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 250ms;
+}
+nav a:hover::before{
+    width:100%;
+}
+
+
+footer{
+    background: linear-gradient(0deg, rgba(244,125,125,1) 0%, rgba(191,99,99,0) 18%);
 }
